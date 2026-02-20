@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lean_pet"
+version = "0.1.0"
+description = "Lightweight Analytical Porous-Electrode Theory"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "pandas",
+]
+
+[project.optional-dependencies]
+mcmc = ["emcee"]
+sim = ["pybamm"]
+vis = ["scikit-image"]
+all = ["emcee", "pybamm", "scikit-image"]
+
+[tool.setuptools.packages.find]
+include = ["lean_pet*"]
+
